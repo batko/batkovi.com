@@ -31,7 +31,7 @@ class SignFormFactory extends Nette\Object
 
 		$form->addCheckbox('remember', 'Keep me signed in');
 
-		$form->addSubmit('send', 'Sign in');
+		$form->addSubmit('submit', 'Sign in');
 
 		$form->onSuccess[] = array($this, 'formSucceeded');
 		return $form;

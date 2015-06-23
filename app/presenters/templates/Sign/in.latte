@@ -17,19 +17,45 @@
     <link href='http://fonts.googleapis.com/css?family=Clicker+Script&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
     <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700&subset=latin,cyrillic,cyrillic-ext,greek-ext,greek,vietnamese' rel='stylesheet' type='text/css'>
 </head>
-<body>
+<body style="background-color: #7F7F7F">
     <div id="main_container">
-        <a class="show_menu" href="#"><img src="{$basePath}/images/mobile_menu_open.png" alt="" title="" /></a>
-        <a class="hide_menu" href="#"><img src="{$basePath}/images/mobile_menu_close.png" alt="" title="" /></a>
-  <div class="title_container">
-      
+
+        <div class="title_container">
+
             <div class="love_birds"><img src="{$basePath}/images/birds_icon.png" alt="" title=""/></div>
             <div class="title">Šárka <span>&amp;</span> Pavel</div>
             <div class="title_date"><span class="swirl_left"><span class="swirl_right">05.09.2015</span></span></div>
-            
- {control signInForm}
+
+
+            <div class="full_width_centered">
+
+                    <form n:name=signInForm>
+                {*control signInForm*}
+                <div class="left13_first">
+                </div>
+                <div class="left13">
+
+
+                    <input type="text" class="form_input required" n:name=password name="password" id="contactname" placeholder="heslo"/>
+                    <center>
+                        
+                        <input  n:name=submit type="submit" name="submit" class="form_submit_contact" id="submit" value="Vstoupit" />
+                    </center>
+
+
+
+
+
+
+
+                </div>
+
+                <div class="form_row left13_last"></div>
+
+                    </form>
         </div>
-        <div class="slider_container">
+        </div>
+       {* <div class="slider_container">
             <div class="slider_trans_black"></div>
             <div id="random">
                 <div style="background-image: url(images/slider/slide1.jpg);"></div>
@@ -37,7 +63,8 @@
                 <div style="background-image: url(images/slider/slide3.jpg);"></div>                   
             </div>
         </div>
-  </div>
+         *}
+    </div>
 
 
 
