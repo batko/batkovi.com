@@ -1,0 +1,98 @@
+{layout none}
+{block script}
+
+{/block}
+{block content}
+<!DOCTYPE html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width; initial-scale=1; maximum-scale=1" />
+    <meta name="author" content="FamousThemes" />
+    <meta name="description" content="Get in the spotlight" />
+    <meta name="keywords" content="premium css templates, premium wordpress themes, famous themes, themeforest" />
+    <title>Wedding Bells | Batkovi.com</title>
+    <link rel="stylesheet" type="text/css" media="all" href="{$basePath}/style.css" />
+    <link rel="stylesheet" type="text/css" media="all" href="{$basePath}/colors/green.css" />
+    <link rel="stylesheet" href="{$basePath}/css/carousel.css">
+    <link href='http://fonts.googleapis.com/css?family=Clicker+Script&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700&subset=latin,cyrillic,cyrillic-ext,greek-ext,greek,vietnamese' rel='stylesheet' type='text/css'>
+</head>
+<body>
+    <div id="main_container">
+        <a class="show_menu" href="#"><img src="{$basePath}/images/mobile_menu_open.png" alt="" title="" /></a>
+        <a class="hide_menu" href="#"><img src="{$basePath}/images/mobile_menu_close.png" alt="" title="" /></a>
+  <div class="title_container">
+      
+            <div class="love_birds"><img src="{$basePath}/images/birds_icon.png" alt="" title=""/></div>
+            <div class="title">Šárka <span>&amp;</span> Pavel</div>
+            <div class="title_date"><span class="swirl_left"><span class="swirl_right">05.09.2015</span></span></div>
+            
+ {control signInForm}
+        </div>
+        <div class="slider_container">
+            <div class="slider_trans_black"></div>
+            <div id="random">
+                <div style="background-image: url(images/slider/slide1.jpg);"></div>
+                <div style="background-image: url(images/slider/slide2.jpg);"></div> 
+                <div style="background-image: url(images/slider/slide3.jpg);"></div>                   
+            </div>
+        </div>
+  </div>
+
+
+
+
+
+
+    <!-- jQuery -->
+    <script type="text/javascript" src="js/jquery-1.11.1.min.js"></script>
+    <!-- SLIDER -->
+    <script type="text/javascript" src="js/jquery.skippr.js"></script>
+    <script>
+        $(document).ready(function () {
+            "use strict";
+            $("#random").skippr({
+                navType: 'bubble',
+                transition: 'fade',
+                autoPlay: true,
+                autoPlayDuration: 4000,
+                speed: 1000,
+                arrows: false
+            });
+            $("#weddingcarousel").owlCarousel({
+                items: 4,
+                itemsScaleUp: true,
+                navigationText: ["prev", "next"]
+            })
+        });
+    </script>
+    <script src="js/owl.carousel.js"></script>
+    <!-- DropDownMenu -->
+    <script type="text/javascript" src="js/menu.js"></script>
+    <script type="text/javascript" src="js/effects.js"></script>
+    <script type="text/javascript" src="js/jquery.arctext.js"></script>
+    <script type="text/javascript" src="js/jquery.countdown.js"></script>
+    <script type="text/javascript">
+        var $ = jQuery.noConflict();
+        $(window).load(function () {
+            "use strict";
+            var $titlefront = $('.title_front').hide();
+            var $titleunder = $('.title_under').hide();
+            var $bestman = $('.bestman span').hide();
+            var $footernames = $('.footer_names').hide();
+
+            $titlefront.show().arctext({ radius: 250});
+            $titleunder.show().arctext({ radius: 180, dir: -1});
+            $bestman.show().arctext({ radius: 80});
+            $footernames.show().arctext({ radius: 120, dir: -1});
+
+            $('#defaultCountdown').countdown({ until: new Date(2015, 9 - 1, 5, 15), format: 'y-o-d-h'});
+
+        });
+    </script>
+    <script type="text/javascript">
+        var main_menu = new main_menu.dd("main_menu");
+        main_menu.init("main_menu", "menuhover");
+    </script>
+</body>
+</html>

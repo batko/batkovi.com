@@ -1,0 +1,39 @@
+/*------------------------------------------------------------------
+[yellow Stylesheet]
+
+Template Color:	yellow;
+
+# [Color codes]
+
+# Regular yellow (links, headings span, footer names): #d39f00
+# Darker yellow (countdown bg, span titles) #e9b000
+# Light yellow (links selected) #ffd963
+-------------------------------------------------------------------*/
+a, blockquote, span.love_quote, h1 span, h2 span, h3 span, h4 span, h5 span, h6 span, span.post_date, .latest_posts .left13:hover .post_info h3 a, .latest_posts .left13_last:hover .post_info h3 a, .checkbox_container label span, .footer_names{
+color:#d39f00;}
+blockquote{
+border-left:3px #d39f00 solid;}
+a.post_read_more, a.view_all, .wp-pagenavi a, .wp-pagenavi span.current{
+border:1px #d39f00 solid;}
+.wp-pagenavi a:hover{ 
+background-color:#d39f00;}
+
+.back, .about_topsign, span.names_titles, span.subtitle{
+color:#e9b000;}
+.back, .contact_email a{
+border:1px solid #e9b000;}
+.no-touch .back:hover, .countdown_container, a.thumb_read_more, .full_width_carousel .left14 h3, .full_width_carousel .left14_last h3, input.form_submit_contact, input[type="checkbox"] + label:before, input[type="checkbox"]:checked + label:before{
+background-color:#e9b000; }
+
+
+.tp-title span:nth-child(2), .tp-title:hover, .page_header_title a, .title span, .title_under, ul#main_menu li a.selected, ul#main_menu li a:hover, span.carousel_titles{
+color:#ffd963;}
+
+ul#main_menu li a.selected, ul#main_menu li a:hover, .footer_menu li{
+background:url(../images/menu_bullet_yellow.png) no-repeat left;}
+
+@media screen and (max-width: 680px) {
+nav.menu{background-color:#e9b000;}
+ul#main_menu li a.selected, ul#main_menu li a:hover, .footer_menu li{
+background:none;}
+}
