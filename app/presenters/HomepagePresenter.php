@@ -61,7 +61,7 @@ class HomepagePresenter extends BasePresenter {
                 ->setSubject('Svatba ' . $fd->phone)
                 ->setHtmlBody($latte->renderToString('../app/presenters/template/email.latte', $params));
 
-        //  $this->mailer->send($mail);
+        $this->mailer->send($mail);
     }
 
 }
