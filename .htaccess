@@ -1,0 +1,18 @@
+RewriteEngine On
+
+#http://dense13.com/blog/2008/02/27/redirecting-non-www-to-www-with-htaccess/
+RewriteCond %{HTTP_HOST} !^www\.
+RewriteRule ^(.*)$ http://www.%{HTTP_HOST}/$1 [R=301,L]
+
+#http://stackoverflow.com/questions/234723/generic-htaccess-redirect-www-to-non-www
+#RewriteBase /
+#RewriteCond %{HTTP_HOST} ^www\.(.*)$ [NC]
+#RewriteRule ^(.*)$ http://%1/$1 [R=301,L]
+#
+RewriteCond %{HTTP_HOST} ^.+\..+
+RewriteRule (.*) /www/$1 [L,QSA]
+#
+#RewriteCond %{HTTP_HOST} ^(.*)\..+\..+
+#RewriteRule (.*) /www/$1 [L,QSA]
+
+
