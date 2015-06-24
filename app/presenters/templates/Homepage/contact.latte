@@ -8,160 +8,165 @@
 <!-- DropDownMenu -->
 <script type="text/javascript" src="js/menu.js"></script>
 <script type="text/javascript" charset="utf-8">
-var $ = jQuery.noConflict();
-  $(window).load(function() {
-    "use strict";
-	$("#ContactForm").validate({
-	submitHandler: function(form) {
-	ajaxContact(form);
-	return false;
-	}
-	});
-	
-	  jQuery(function($){
-	  "use strict";
-		$(".tweet").tweet({
-		  modpath: 'js/twitter/',
-		  join_text: "auto",
-		  username: "famousthemes",
-		  count: 1,
-		  auto_join_text_default: "we said,",
-		  auto_join_text_ed: "we",
-		  auto_join_text_ing: "we were",
-		  auto_join_text_reply: "we replied",
-		  auto_join_text_url: "we were checking out",
-		  loading_text: "loading tweets..."
-		});
-	  });
-  });
+    var $ = jQuery.noConflict();
+    $(window).load(function () {
+        "use strict";
+        $("#ContactForm").validate({
+            submitHandler: function (form) {
+                ajaxContact(form);
+                return false;
+            }
+        });
+
+        jQuery(function ($) {
+            "use strict";
+            $(".tweet").tweet({
+                modpath: 'js/twitter/',
+                join_text: "auto",
+                username: "famousthemes",
+                count: 1,
+                auto_join_text_default: "we said,",
+                auto_join_text_ed: "we",
+                auto_join_text_ing: "we were",
+                auto_join_text_reply: "we replied",
+                auto_join_text_url: "we were checking out",
+                loading_text: "loading tweets..."
+            });
+        });
+    });
 </script>
 <script type="text/javascript">
-var main_menu=new main_menu.dd("main_menu");
-main_menu.init("main_menu","menuhover");
+    var main_menu = new main_menu.dd("main_menu");
+    main_menu.init("main_menu", "menuhover");
 </script>
-<script type="text/javascript">  
-function ajaxContact(theForm) {
-"use strict";
-var $ = jQuery;
-$('#loader').fadeIn();
-var formData = $(theForm).serialize(),
-note = $('#Note');
-$.ajax({
-type: "POST",
-url: "contact-send.php",
-data: formData,
-success: function(response) {
-if ( note.height() ) {			
-note.fadeIn('fast', function() { $(this).hide(); });
-} else {
-note.hide();
-}
-$('#LoadingGraphic').fadeOut('fast', function() {
-$(this).remove();
-if (response === 'success') {
-	
-	$('#ContactForm').hide();
-	
-}
+<script type="text/javascript">
+    function ajaxContact(theForm) {
+        "use strict";
+        var $ = jQuery;
+        $('#loader').fadeIn();
+        var formData = $(theForm).serialize(),
+                note = $('#Note');
+        $.ajax({
+            type: "POST",
+            url: "contact-send.php",
+            data: formData,
+            success: function (response) {
+                if (note.height()) {
+                    note.fadeIn('fast', function () {
+                        $(this).hide();
+                    });
+                } else {
+                    note.hide();
+                }
+                $('#LoadingGraphic').fadeOut('fast', function () {
+                    $(this).remove();
+                    if (response === 'success') {
+
+                        $('#ContactForm').hide();
+
+                    }
 // Message Sent? Show the 'Thank You' message and hide the form
-result = '';
-c = '';
-if (response === 'success') { 
-	result = 'Your message has been sent. Thank you!';
-	c = 'success';
-} else {
-	result = response;
-	c = 'error';
-}
-note.removeClass('success').removeClass('error').text('');
-var i = setInterval(function() {
-	if ( !note.is(':visible') ) {
-		note.html(result).addClass(c).slideDown('fast');
-		clearInterval(i);
-	}
-}, 40);    
-}); // end loading image fadeOut
-}
-});
-return false;
-}
+                    result = '';
+                    c = '';
+                    if (response === 'success') {
+                        result = 'Your message has been sent. Thank you!';
+                        c = 'success';
+                    } else {
+                        result = response;
+                        c = 'error';
+                    }
+                    note.removeClass('success').removeClass('error').text('');
+                    var i = setInterval(function () {
+                        if (!note.is(':visible')) {
+                            note.html(result).addClass(c).slideDown('fast');
+                            clearInterval(i);
+                        }
+                    }, 40);
+                }); // end loading image fadeOut
+            }
+        });
+        return false;
+    }
 </script>  
 
 {/block}
 
 {block content}
 <div class="page_header_photo contact_header">
-      <div class="page_header_trans">
-               <div class="page_header_title">
-               <h1>KONTAKT/h1>
-<p>Cokoliv si přejete vědět, nebojte se zeptat</p>
-               <div class="contact_email"><a href="#">ourlovelyemail@weddingwebsite.com</a></div>
-               </div>
-       </div>
-   </div>
-
-    <div class="page_content">
-     <div class="full_width_centered">
-
-          
-         
-<div class="left14_first">
-<h5>Pavel Batko</h5>
-<p>602 521 012</p>
-<p>Volat kdykolv ve dne v noci jen ne v den obřadu :-). Díky</p>
-</div>
-<div class="left14">
-<h5>Šárka Zemanová</h5>
-<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.</p>
-</div>
-<div class="left14">
-<h5>Karel Kokaisl</h5>
-<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.</p>
-</div>
-<div class="left14_last">
-<h5>Petra Zemanová</h5>
-<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.</p>
+    <div class="page_header_trans">
+        <div class="page_header_title">
+            <h1>KONTAKT</h1>
+            <p>Cokoliv si přejete vědět, nebojte se zeptat</p>
+            <div class="contact_email"><a href="#">ourlovelyemail@weddingwebsite.com</a></div>
+        </div>
+    </div>
 </div>
 
-         
-			<div class="form_content">
-                <h3 class="form_toptitle" id="Note"></h3>
-                <form id="ContactForm" method="post" action="">
-                
-               <h3 class="form_subtitle">KONTAKTNÍ FORMULÁŘ</h3>
-      
-                    <div class="form_row left13_first">
+<div class="page_content">
+    <div class="full_width_centered">
+
+
+
+        <div class="left14_first">
+            <h5>Pavel Batko</h5>
+            <h5>602 521 012</h5>
+            <p>Volat kdykolv ve dne v noci jen ne v den obřadu :-). Díky</p>
+        </div>
+        <div class="left14">
+            <h5>Šárka Zemanová</h5>
+             
+            <p>Raději nevolat, je to přeci jenom nevěsta.</p>
+        </div>
+        <div class="left14">
+            
+            <h5>Karel Kokaisl</h5>
+            <h5>+47 980 78 165</h5>
+            <p>Norské číslo, ale je to čech jak poleno. A všechno zařídí. Pravá ruka ženicha.</p>
+        </div>
+        <div class="left14_last">
+            <h5>Petra Zemanová</h5>
+            <p></p>
+        </div>
+
+
+        <div class="form_content">
+            <h3 class="form_toptitle" id="Note"></h3>
+            <form id="ContactForm" method="post" action="">
+
+                <h3 class="form_subtitle">KONTAKTNÍ FORMULÁŘ</h3>
+
+                <div class="form_row left13_first">
                     <label>Jméno</label>
                     <input type="text" class="form_input required" name="contactname" id="contactname" />
-                    </div>
-                    <div class="form_row left13">
+                </div>
+                <div class="form_row left13">
                     <label>Email</label>
                     <input type="text" class="form_input required email" name="contactemail" id="contactemail" />
-                    </div>
-                     <div class="form_row left13_last">
+                </div>
+                <div class="form_row left13_last">
                     <label>Telefon</label>
                     <input type="text" class="form_input required" name="contactphone" id="contactphone" />
-                    </div>
-                    <div class="form_row_full">
+                </div>
+                <div class="form_row_full">
                     <label>Zpráva</label>
                     <textarea class="form_textarea_full" name="contactcomments" id="contactcomments"></textarea>
-                    </div>
-                    <div class="form_row">
+                </div>
+                <div class="form_row">
                     <input type="submit" name="submit" class="form_submit_contact" id="submit" value="Odeslat zprávu" />
                     <input class="" type="hidden" name="to"  value="youremail@yourwebsite.com" />
                     <input class="" type="hidden" name="subject" value="Contact form message" />
                     <label id="loader" style="display:none;"><img src="images/loader.gif" alt="Loading..." id="LoadingGraphic" /></label> 
-                
-               </div>
-                
-                </form>
-            </div> 
-                
-          <div class="clear"></div>
-        </div>  <!--end of full width-->
-      </div> <!--end of page content--> 
-      
-      
+
+                </div>
+
+            </form>
+        </div> 
+
+        <div class="clear"></div>
+    </div>  <!--end of full width-->
+</div> <!--end of page content--> 
+
+
 
 
 
