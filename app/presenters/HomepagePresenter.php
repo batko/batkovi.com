@@ -47,8 +47,10 @@ class HomepagePresenter extends BasePresenter {
         return $form;
     }
 
-    public function formContactSubmitted($form, $fd) {
-        $latte = new Latte\Engine;
+    public function formContactSubmitted(Nette\Application\UI\Form $form, $values) {
+        dump($form->getValues());
+
+        $latte = new \Latte\Engine;
         $params = array(
             'text' => $fd->text,
         );

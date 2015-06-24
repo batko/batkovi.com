@@ -131,31 +131,29 @@
 
         <div class="form_content">
             <h3 class="form_toptitle" id="Note"></h3>
-            <form id="ContactForm" method="post" action="">
+            <form n:name="formContact">
 
                 <h3 class="form_subtitle">KONTAKTNÍ FORMULÁŘ</h3>
 
                 <div class="form_row left13_first">
                     <label>Jméno</label>
-                    <input type="text" class="form_input required" name="contactname" id="contactname" />
+                    <input n:name=name type="text" class="form_input required" name="contactname" id="contactname" />
                 </div>
                 <div class="form_row left13">
                     <label>Email</label>
-                    <input type="text" class="form_input required email" name="contactemail" id="contactemail" />
+                    <input n:name=email type="text" class="form_input required email" name="contactemail" id="contactemail" />
                 </div>
                 <div class="form_row left13_last">
                     <label>Telefon</label>
-                    <input type="text" class="form_input required" name="contactphone" id="contactphone" />
+                    <input n:name=phone type="text" class="form_input required" name="contactphone" id="contactphone" />
                 </div>
                 <div class="form_row_full">
                     <label>Zpráva</label>
                     <textarea class="form_textarea_full" name="contactcomments" id="contactcomments"></textarea>
                 </div>
                 <div class="form_row">
-                    <input type="submit" name="submit" class="form_submit_contact" id="submit" value="Odeslat zprávu" />
-                    <input class="" type="hidden" name="to"  value="youremail@yourwebsite.com" />
-                    <input class="" type="hidden" name="subject" value="Contact form message" />
-                    <label id="loader" style="display:none;"><img src="images/loader.gif" alt="Loading..." id="LoadingGraphic" /></label> 
+                    <input n:name=submit  type="submit" name="submit" class="form_submit_contact" id="submit" value="Odeslat zprávu" />
+                    
 
                 </div>
 
