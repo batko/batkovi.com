@@ -57,7 +57,7 @@ class HomepagePresenter extends BasePresenter {
 
         $mail = new Nette\Mail\Message;
         $mail->setFrom($fd->name . " <" . $fd->email . ">")
-                ->addTo('pavel@batko.cz')
+                ->addTo('svatba@batkovi.com')
                 ->setSubject('Svatba ' . $fd->phone)
                 ->setHtmlBody($latte->renderToString('../app/presenters/template/email.latte', $params));
 
