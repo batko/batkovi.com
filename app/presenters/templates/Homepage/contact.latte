@@ -114,46 +114,50 @@
         </div>
         <div class="left14">
             <h5>Šárka Zemanová</h5>
-             
+
             <p>Raději nevolat, je to přeci jenom nevěsta.</p>
         </div>
         <div class="left14">
-            
+
             <h5>Karel Kokaisl</h5>
             <h5>+47 980 78 165</h5>
             <p>Norské číslo, ale je to čech jak poleno. A všechno zařídí. Pravá ruka ženicha.</p>
         </div>
         <div class="left14_last">
             <h5>Petra Zemanová</h5>
-            <p></p>
+            <h5>724 512 140</h5>
+            <p>Pravá ruka a mluvčí nevěsty.</p>
         </div>
 
 
         <div class="form_content">
             <h3 class="form_toptitle" id="Note"></h3>
-            <form n:name="formContact">
+            <form n:name="contactForm" class="form">
 
                 <h3 class="form_subtitle">KONTAKTNÍ FORMULÁŘ</h3>
 
+                <ul class="errors" n:if="$form->hasErrors()">
+                    <li style="color: red" n:foreach="$form->errors as $error">{$error}</li>
+                </ul><br>
                 <div class="form_row left13_first">
                     <label>Jméno</label>
-                    <input n:name=name type="text" class="form_input required" name="contactname" id="contactname" />
+                    <input n:name="name" type="text" class="form_input required"  id="contactname" />
                 </div>
                 <div class="form_row left13">
                     <label>Email</label>
-                    <input n:name=email type="text" class="form_input required email" name="contactemail" id="contactemail" />
+                    <input n:name="email" type="text" class="form_input required email"  id="contactemail" />
                 </div>
                 <div class="form_row left13_last">
                     <label>Telefon</label>
-                    <input n:name=phone type="text" class="form_input required" name="contactphone" id="contactphone" />
+                    <input n:name="phone" type="text" class="form_input required" id="contactphone" />
                 </div>
                 <div class="form_row_full">
                     <label>Zpráva</label>
-                    <textarea class="form_textarea_full" name="contactcomments" id="contactcomments"></textarea>
+                    <textarea n:name="text" class="form_textarea_full" id="contactcomments"></textarea>
                 </div>
                 <div class="form_row">
-                    <input n:name=submit  type="submit" name="submit" class="form_submit_contact" id="submit" value="Odeslat zprávu" />
-                    
+                    <input n:name="submit"  type="submit"  class="form_submit_contact" id="submit" value="Odeslat zprávu" />
+
 
                 </div>
 

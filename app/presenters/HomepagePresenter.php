@@ -33,22 +33,32 @@ class HomepagePresenter extends BasePresenter {
         $this->template->anyVariable = 'any value';
     }
 
-    protected function createComponentFormContact() {
+    protected function createComponentContactForm() {
         $form = new Nette\Application\UI\Form();
         $form->addText("name");
-        $form->addText("email");
+        $form->addText("email")->addRule($form::EMAIL, "zadej email ve správném tvaru");
         $form->addText("phone");
-        $form->addText("text");
+        $form->addTextArea("text");
 
         $form->addSubmit("submit");
 
         $form->onSuccess[] = $this->formContactSubmitted;
 
+        $form->setValues(
+                [
+                    "name" => "asdasd",
+                    "email" => "asdasd",
+                    "phone" => "602521012",
+                    "text" => "texcyxcyxcyxcyxcy"
+                ]
+        );
+
+
         return $form;
     }
 
-    public function formContactSubmitted(Nette\Application\UI\Form $form, $values) {
-        dump($form->getValues());
+    public function formContactSubmitted(Nette\Application\UI\Form $form) {
+        $fd = $form->getValues();
 
         $latte = new \Latte\Engine;
         $params = array(
@@ -56,7 +66,7 @@ class HomepagePresenter extends BasePresenter {
         );
 
         $mail = new Nette\Mail\Message;
-        $mail->setFrom($fd->name . " <" . $fd->email . ">")
+        $mail->setFrom($fd->email)
                 ->addTo('svatba@batkovi.com')
                 ->setSubject('Svatba ' . $fd->phone)
                 ->setHtmlBody($latte->renderToString('../app/presenters/template/email.latte', $params));
