@@ -10,8 +10,8 @@ use Nette,
  */
 class HomepagePresenter extends BasePresenter {
 
-    /** @var Nette\Mail\IMailer */
-    private $mailer;
+    /** @var Nette\Mail\IMailer @inject */
+    public $mailer;
 
     public function renderDefault() {
         $this->template->anyVariable = 'any value';
@@ -47,8 +47,8 @@ class HomepagePresenter extends BasePresenter {
         $form->setValues(
                 [
                     "name" => "asdasd",
-                    "email" => "asdasd",
-                    "phone" => "602521012",
+                    "email" => "pavel@havel.cz",
+                    "phone" => "342344333",
                     "text" => "texcyxcyxcyxcyxcy"
                 ]
         );
@@ -69,9 +69,11 @@ class HomepagePresenter extends BasePresenter {
         $mail->setFrom($fd->email)
                 ->addTo('svatba@batkovi.com')
                 ->setSubject('Svatba ' . $fd->phone)
-                ->setHtmlBody($latte->renderToString('../app/presenters/template/email.latte', $params));
+                ->setHtmlBody($latte->renderToString('../app/presenters/templates/mail.latte', $params));
 
         $this->mailer->send($mail);
+        $this->flashMessage("Email byl odeslán. Ozveme se :-)", "success");
+        $this->redirect("this");
     }
 
 }

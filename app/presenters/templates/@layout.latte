@@ -1,3 +1,14 @@
+{define map}
+ <iframe width="100%" height="450" frameborder="0" style="border:0" src="https://www.google.com/maps/embed/v1/place?q=mil%C3%ADnov%2023&key=AIzaSyC4xpT4NPS40Ht2XprrKojUHFCU9eM0jyM"></iframe> 
+{/define}
+{define menu}
+<li><a {ifCurrent default} class="selected" {/ifCurrent} n:href="default">HOME</a></li>
+<li><a {ifCurrent faq} class="selected" {/ifCurrent} n:href="faq">FAQ</a></li>
+<li><a {ifCurrent program} class="selected" {/ifCurrent} n:href="program">PROGRAM</a></li>
+<li><a {ifCurrent accommodation} class="selected" {/ifCurrent} n:href="accommodation">UBYTOVÁNÍ</a></li>
+<li><a {ifCurrent photo} class="selected" {/ifCurrent} n:href="photo">FOTO</a></li>
+<li><a {ifCurrent contact} class="selected" {/ifCurrent} n:href="contact">KONTAKT</a></li>
+{/define}
 <!DOCTYPE html>
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -6,6 +17,7 @@
     <meta name="description" content="Get in the spotlight" />
     <meta name="keywords" content="premium css templates, premium wordpress themes, famous themes, themeforest" />
     <title>{ifset #title}{block title|striptags}  {/block}{/ifset} Batkovi.com</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" media="all" href="{$basePath}/style.css" />
     <link rel="stylesheet" type="text/css" media="all" href="{$basePath}/colors/green.css" />
     <link rel="stylesheet" href="{$basePath}/css/carousel.css">
@@ -20,18 +32,7 @@
 
         <nav class="menu">                                                                   
             <ul id="main_menu">
-                <li><a {ifCurrent default} class="selected" {/ifCurrent} n:href="default">HOME</a></li>
-                <li><a {ifCurrent faq} class="selected" {/ifCurrent} n:href="faq">FAQ</a></li>
-                <li><a {ifCurrent program} class="selected" {/ifCurrent} n:href="program">PROGRAM</a></li>
-                <li><a {ifCurrent accommodation} class="selected" {/ifCurrent} n:href="accommodation">UBYTOVÁNÍ</a></li>
-                <li><a {ifCurrent photo} class="selected" {/ifCurrent} n:href="photo">FOTO</a></li>
-                <li><a {ifCurrent contact} class="selected" {/ifCurrent} n:href="contact">KONTAKT</a></li>
-                <li><a {ifCurrent contact} class="selected" {/ifCurrent} n:href="Sign:out">odhlasit</a></li>
-                    {*     <li><a href="blog.html">BLOG</a></li>
-                    <li><a href="photos.html">PHOTOS</a></li>
-                    <li><a href="rsvp.html">RSVP</a></li>
-                    <li><a href="contact.html">GET IN TOUCH</a></li> 
-                    *}
+                {include menu}
             </ul>
         </nav>
         {include content}
@@ -39,7 +40,7 @@
         <div class="footer">
             <div class="full_width_centered">
                 <div class="footer_sign"><span class="swirl_left_transparent"><span class="swirl_right_transparent"><img src="{$basePath}/images/birds_icon.png" alt="" title="" /></span></span></div>
-                <div class="footer_names">SARKA &amp; PAVEL</div>
+                <div class="footer_names">ŠÁRKA &amp; PAVEL</div>
                 {*   <div class="footer_socials">
                        <ul>
                            <li><a href="#"><img src="{$basePath}/images/social/twitter.png" alt="" title="" /></a></li>
@@ -52,10 +53,7 @@
                    </div>*}
                 <nav class="footer_menu">
                     <ul>
-                        <li><a href="index.html" class="selected">HOME</a></li>
-                        <li><a href="page.html">THE WEDDING</a></li>
-                        <li><a href="rsvp.html">RSVP</a></li>
-                        <li><a href="contact.html">GET IN TOUCH</a></li>
+                       {include menu}
                         <li><a onClick="jQuery('html, body').animate({ scrollTop: 0}, 'slow');"  href="javascript:void(0);" class="gotop" title="Go on top">TOP</a> </li>
                     </ul>
                 </nav>

@@ -105,7 +105,7 @@
 <div class="page_content">
     <div class="full_width_centered">
 
-
+<div n:foreach="$flashes as $flash" class="flash, alert alert-{$flash->type}">{$flash->message}</div>
 
         <div class="left14_first">
             <h5>Pavel Batko</h5>
