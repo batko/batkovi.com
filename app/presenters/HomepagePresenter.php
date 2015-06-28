@@ -43,15 +43,15 @@ class HomepagePresenter extends BasePresenter {
         $form->addSubmit("submit");
 
         $form->onSuccess[] = $this->formContactSubmitted;
-
-        $form->setValues(
-                [
-                    "name" => "asdasd",
-                    "email" => "pavel@havel.cz",
-                    "phone" => "342344333",
-                    "text" => "texcyxcyxcyxcyxcy"
-                ]
-        );
+//
+//        $form->setValues(
+//                [
+//                    "name" => "asdasd",
+//                    "email" => "pavel@havel.cz",
+//                    "phone" => "342344333",
+//                    "text" => "texcyxcyxcyxcyxcy"
+//                ]
+//        );
 
 
         return $form;
