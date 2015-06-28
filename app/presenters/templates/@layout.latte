@@ -5,7 +5,7 @@
     <meta name="author" content="FamousThemes" />
     <meta name="description" content="Get in the spotlight" />
     <meta name="keywords" content="premium css templates, premium wordpress themes, famous themes, themeforest" />
-    <title>Wedding Bells | Batkovi.com</title>
+    <title>{ifset #title}{block title|striptags}  {/block}{/ifset} Batkovi.com</title>
     <link rel="stylesheet" type="text/css" media="all" href="{$basePath}/style.css" />
     <link rel="stylesheet" type="text/css" media="all" href="{$basePath}/colors/green.css" />
     <link rel="stylesheet" href="{$basePath}/css/carousel.css">
@@ -21,12 +21,12 @@
         <nav class="menu">                                                                   
             <ul id="main_menu">
                 <li><a {ifCurrent default} class="selected" {/ifCurrent} n:href="default">HOME</a></li>
-                    <li><a {ifCurrent faq} class="selected" {/ifCurrent} n:href="faq">FAQ</a></li>
-                 <li><a {ifCurrent program} class="selected" {/ifCurrent} n:href="program">PROGRAM</a></li>
-                 <li><a {ifCurrent accommodation} class="selected" {/ifCurrent} n:href="accommodation">UBYTOVÁNÍ</a></li>
-                 <li><a {ifCurrent photo} class="selected" {/ifCurrent} n:href="photo">FOTO</a></li>
-                 <li><a {ifCurrent contact} class="selected" {/ifCurrent} n:href="contact">KONTAKT</a></li>
-                    <li><a {ifCurrent contact} class="selected" {/ifCurrent} n:href="Sign:out">odhlasit</a></li>
+                <li><a {ifCurrent faq} class="selected" {/ifCurrent} n:href="faq">FAQ</a></li>
+                <li><a {ifCurrent program} class="selected" {/ifCurrent} n:href="program">PROGRAM</a></li>
+                <li><a {ifCurrent accommodation} class="selected" {/ifCurrent} n:href="accommodation">UBYTOVÁNÍ</a></li>
+                <li><a {ifCurrent photo} class="selected" {/ifCurrent} n:href="photo">FOTO</a></li>
+                <li><a {ifCurrent contact} class="selected" {/ifCurrent} n:href="contact">KONTAKT</a></li>
+                <li><a {ifCurrent contact} class="selected" {/ifCurrent} n:href="Sign:out">odhlasit</a></li>
                     {*     <li><a href="blog.html">BLOG</a></li>
                     <li><a href="photos.html">PHOTOS</a></li>
                     <li><a href="rsvp.html">RSVP</a></li>
@@ -34,22 +34,22 @@
                     *}
             </ul>
         </nav>
-{include content}
-        
+        {include content}
+
         <div class="footer">
             <div class="full_width_centered">
                 <div class="footer_sign"><span class="swirl_left_transparent"><span class="swirl_right_transparent"><img src="{$basePath}/images/birds_icon.png" alt="" title="" /></span></span></div>
                 <div class="footer_names">SARKA &amp; PAVEL</div>
-             {*   <div class="footer_socials">
-                    <ul>
-                        <li><a href="#"><img src="{$basePath}/images/social/twitter.png" alt="" title="" /></a></li>
-                        <li><a href="#"><img src="{$basePath}/images/social/facebook.png" alt="" title="" /></a></li>
-                        <li><a href="#"><img src="{$basePath}/images/social/pinterest.png" alt="" title="" /></a></li>
-                        <li><a href="#"><img src="{$basePath}/images/social/vimeo.png" alt="" title="" /></a></li>
-                        <li><a href="#"><img src="{$basePath}/images/social/google.png" alt="" title="" /></a></li>
-                        <li><a href="#"><img src="{$basePath}/images/social/youtube.png" alt="" title="" /></a></li>
-                    </ul>
-                </div>*}
+                {*   <div class="footer_socials">
+                       <ul>
+                           <li><a href="#"><img src="{$basePath}/images/social/twitter.png" alt="" title="" /></a></li>
+                           <li><a href="#"><img src="{$basePath}/images/social/facebook.png" alt="" title="" /></a></li>
+                           <li><a href="#"><img src="{$basePath}/images/social/pinterest.png" alt="" title="" /></a></li>
+                           <li><a href="#"><img src="{$basePath}/images/social/vimeo.png" alt="" title="" /></a></li>
+                           <li><a href="#"><img src="{$basePath}/images/social/google.png" alt="" title="" /></a></li>
+                           <li><a href="#"><img src="{$basePath}/images/social/youtube.png" alt="" title="" /></a></li>
+                       </ul>
+                   </div>*}
                 <nav class="footer_menu">
                     <ul>
                         <li><a href="index.html" class="selected">HOME</a></li>
@@ -65,7 +65,7 @@
 
     </div>
 
-{include script}
-    
+    {include script}
+
 </body>
 </html>
