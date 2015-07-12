@@ -22,7 +22,7 @@ class RouterFactory {
 //            "action" => "default"
 //                ]);
  
-        $router[] = new Route('<action>[/<id>]', array(
+        $router[] = new Route('<presenter>/<action>[/<id>]', array(
             "presenter" => "Homepage",
             "action" => "default"
                 ));
