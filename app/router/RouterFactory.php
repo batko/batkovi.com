@@ -22,10 +22,10 @@ class RouterFactory {
 //            "action" => "default"
 //                ]);
  
-        $router[] = new Route('<presenter>/<action>[/<id>]', [
+        $router[] = new Route('<action>[/<id>]', array(
             "presenter" => "Homepage",
             "action" => "default"
-                ]);
+                ));
         return $router;
     }
 
